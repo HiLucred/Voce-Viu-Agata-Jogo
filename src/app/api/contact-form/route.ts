@@ -9,14 +9,11 @@ const ContactFormSchema = z.object({
   message: z.string(),
 });
 
-export default async function POST(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const { name, email, message } = ContactFormSchema.parse(req.body);
+export async function POST(request: Request) {
+  const { name, email, message } = ContactFormSchema.parse(request.body);
 
   if (!name || !email || !message) {
-    NextResponse.json({ message: "Algo deu errado."})
+    return NextResponse.json({ message: "Algo deu errado."})
   }
 
   const transporter = nodemailer.createTransport({
@@ -36,9 +33,9 @@ export default async function POST(
 
   try {
     await transporter.sendMail(messageFromUser);
-    NextResponse.json({ message: "Mensagem enviada com sucesso!"})
+    return NextResponse.json({ message: "Mensagem enviada com sucesso!"})
   } catch (error) {
     console.error(error);
-    NextResponse.json({ message: "Ocorreu um erro ao enviar a mensagem."})
+    return NextResponse.json({ message: "Ocorreu um erro ao enviar a mensagem."})
   }
 }

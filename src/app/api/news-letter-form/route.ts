@@ -8,15 +8,12 @@ const NewsLetterFormSchema = z.object({
   email: z.string(),
 });
 
-export default async function POST(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export async function POST(request: Request) {
 
-  const { name, email } = NewsLetterFormSchema.parse(req.body);
+  const { name, email } = NewsLetterFormSchema.parse(request.body);
 
   if (!name || !email) {
-    NextResponse.json({ message: "Algo deu errado."})
+    return NextResponse.json({ message: "Algo deu errado."})
   }
 
   const transporter = nodemailer.createTransport({
@@ -36,9 +33,9 @@ export default async function POST(
 
   try {
     await transporter.sendMail(messageFromUser);
-    NextResponse.json({ message: "e-mail cadastrado!"})
+    return NextResponse.json({ message: "e-mail cadastrado!"})
   } catch (error) {
     console.error(error);
-    NextResponse.json({ message: "Ocorreu um erro."})
+    return NextResponse.json({ message: "Ocorreu um erro."})
   }
 }
