@@ -9,10 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'detective-painting': "url('/assets/detective-painting.jpg')",
+        'finger-prints-bg': "url('/assets/finger-prints-background.png')",
+        'crumpled-paper': "url('/assets/crumpled-paper.jpg')",
+        'blur-separator': "url('/assets/background-with-posters.png')",
       },
+      boxShadow: {
+        'image': '0px 0px 10px rgba(0, 0, 0, 0.5)',
+      },
+      colors: {
+        'overlay': "rgba(0, 0, 0, 0.85)",
+      }
     },
   },
   plugins: [],
