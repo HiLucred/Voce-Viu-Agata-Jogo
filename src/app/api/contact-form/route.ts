@@ -16,7 +16,7 @@ export default async function POST(
   const { name, email, message } = ContactFormSchema.parse(req.body);
 
   if (!name || !email || !message) {
-    return res.status(400).end();
+    NextResponse.json({ message: "Algo deu errado."})
   }
 
   const transporter = nodemailer.createTransport({
