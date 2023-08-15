@@ -10,22 +10,27 @@
 
 <div align="center">
 
-![Alt text](image.png)
+<img src="./public/assets/poster.png" />
 
 </div>
 
-<h3 align="center"> JOGUE AGORA MESMO EM </h3>
+<br></br>
 
-<div align="center">
+<h2 align="center"> JOGUE AGORA MESMO EM </h2>
+s
+<br></br>
+
+<a href="https://lucvang.itch.io/onde-est-gata" align="center">
 
 ![!\[Alt text\](image.png)](public/assets/itchio-button.svg)
 
 </div>
+
 <h3 align="center"> https://lucvang.itch.io/onde-est-gata </h3>
 
 <div align="center">
 
-![Alt text](image-1.png)
+<img src="./public/assets/finger-prints-background.png" />
 
 </div>
 
