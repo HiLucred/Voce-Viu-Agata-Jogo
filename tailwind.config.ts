@@ -15,13 +15,30 @@ const config: Config = {
         'blur-separator': "url('/assets/background-with-posters.png')",
       },
       boxShadow: {
-        'image': '0px 0px 10px rgba(0, 0, 0, 0.5)',
+        image: '0px 0px 10px rgba(0, 0, 0, 0.5)',
       },
       colors: {
-        'overlay': "rgba(0, 0, 0, 0.85)",
-      }
+        overlay: 'rgba(0, 0, 0, 0.85)',
+      },
+      keyframes: {
+        slideDown: {
+          '0%': { opacity: '0%' },
+
+          '100%': { opacity: '100%' },
+        },
+        slideUp: {
+          '100%': { opacity: '0%' },
+
+          '0%': { opacity: '100%' },
+        },
+      },
+      animation: {
+        slideDown: 'slideDown 200ms ease-in-out',
+        slideUp: 'slideUp 200ms ease-in-out',
+      },
     },
   },
   plugins: [],
 }
+
 export default config
