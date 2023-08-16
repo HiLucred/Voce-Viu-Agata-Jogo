@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import poster from '../../public/assets/poster.png'
 import itchioButton from '../../public/assets/itchio-button.svg'

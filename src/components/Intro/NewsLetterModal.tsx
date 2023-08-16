@@ -46,6 +46,7 @@ export function NewsLetterModal() {
             <h2 className="text-xl font-bold md:text-4xl ">
               Assine nossa NewsLetter
             </h2>
+
             <p className="text-sm md:text-lg mb-4">
               e fique antenado as novidades semanais sobre &quot;Você viu
               Ágata?&quot;
@@ -56,12 +57,14 @@ export function NewsLetterModal() {
             <label htmlFor="" className="text-sm">
               SEU NOME
             </label>
+
             <input
               type="text"
               placeholder="Digite seu nome..."
               className="w-full border border-black text-xs py-3 px-2 focus:outline-none focus:ring focus:ring-red-400"
               {...register('name')}
             />
+
             <span className="text-xs text-red-500">{errors.name?.message}</span>
           </div>
 
@@ -69,12 +72,14 @@ export function NewsLetterModal() {
             <label htmlFor="" className="text-sm">
               SEU E-MAIL
             </label>
+
             <input
               type="text"
               placeholder="Digite seu nome..."
               className="w-full border border-black text-xs py-3 px-2 focus:outline-none focus:ring focus:ring-red-400"
               {...register('email')}
             />
+
             <span className="text-xs text-red-500">
               {errors.email?.message}
             </span>

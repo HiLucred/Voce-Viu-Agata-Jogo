@@ -2,12 +2,8 @@
 
 import Image from 'next/image'
 import poster from '../../../public/assets/poster.png'
-import itchio from '../../../public/assets/itchio-button.svg'
-import { Button } from '../Button'
-import { Play, Plus } from 'lucide-react'
-import * as Dialog from '@radix-ui/react-dialog'
-import { TeaserModal } from './TeaseModal'
-import { NewsLetterModal } from './NewsLetterModal'
+import { ActionButtons } from './ActionButtons'
+import { MainPoster } from './MainPoster'
 
 export function Intro() {
   return (
@@ -22,17 +18,7 @@ export function Intro() {
             />
           </div>
 
-          <div className="relative max-w-xl">
-            <Image
-              src={poster}
-              alt="Poster de desaparecida de Ágata"
-              style={{ filter: 'drop-shadow(0 5px 20px rgba(0, 0, 0, 80%))' }}
-            />
-
-            <button className="absolute bottom-[10%] left-[30%] w-[40%] hover:scale-[130%] transition-all">
-              <Image src={itchio} alt="itch.io button" />
-            </button>
-          </div>
+          <MainPoster />
 
           <div className="max-w-sm sr-only lg:not-sr-only">
             <Image
@@ -43,23 +29,7 @@ export function Intro() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 lg:flex-row">
-          <Dialog.Root>
-            <Dialog.Trigger asChild>
-              <Button text="CONFIRA O TRAILER" icon={Play} />
-            </Dialog.Trigger>
-
-            <TeaserModal />
-          </Dialog.Root>
-
-          <Dialog.Root>
-            <Dialog.Trigger asChild>
-              <Button text="NEWSLETTER" icon={Plus} />
-            </Dialog.Trigger>
-
-            <NewsLetterModal />
-          </Dialog.Root>
-        </div>
+        <ActionButtons />
       </div>
     </div>
   )
